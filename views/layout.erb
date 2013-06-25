@@ -1,12 +1,38 @@
 <!doctype html>
 <html>
 <head>
-	<link type = "text/css" rel = "stylesheet" href = "../style.css">
+	<style>
+		body {
+			background-image: url("http://orangepunch.blog.ocregister.com/files/2010/05/money-AP070316023012.jpg");
+			color: white;
+		}
+		#stockBox {
+			height: 400px;
+			width: 400px;
+			background: black;
+			opacity: .80;
+			margin: auto;
+			margin-top: 100px;
+			padding-top: 100px;
+			text-align: center;
+		}
+		#result {
+			height: 70px;
+			width: 200px;
+			background: black;
+			margin: auto;
+			margin-top: 20px;
+			padding-top: 2px;
+			border: 2px solid gray;
+			
+		}
+	</style>
 	<title>Stock Quotes</title>
 </head>
 <body>
-	<h1> Pick a Stock, any Stock </h1>
+	
 	<div id = "stockBox" >
+		<h1> Pick a Stock, any Stock </h1>
 		<%= yield %>
 	</div>
 

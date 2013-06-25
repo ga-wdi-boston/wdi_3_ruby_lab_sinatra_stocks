@@ -5,7 +5,9 @@
 </form>
 
 <% if @ticker && @ticker != "" %>	
-	<p> The value of this stock is:
-		<%= YahooFinance::get_quotes(YahooFinance::StandardQuote, @ticker)[@ticker].lastTrade.round(2) %> 
-	</p>
+	<div id = "result">
+		<p> The value of this stock is:
+			<%= YahooFinance::get_quotes(YahooFinance::StandardQuote, @ticker)[@ticker].lastTrade.round(2) %> 
+		</p>
+	</div>
 <% end %>
