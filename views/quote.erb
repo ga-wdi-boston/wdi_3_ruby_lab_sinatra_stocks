@@ -1,6 +1,8 @@
 
-<form action = "/" method = "get">
-	<input type = "text" name = "ticker symbol"></input>
+<form action = "/quote_form" method = "get">
+	<input type = "text" name = "ticker symbol">
 	<button> Get Quote! </button>
 </form>
-<p> The current value of this stock is <% YahooFinance::get_quotes(YahooFinance::StandardQuote, @ticker)[@ticker].lastTrade %> </p>
+<p> The current value of this stock is 
+	<%= YahooFinance::get_quotes(YahooFinance::StandardQuote, @ticker)[@ticker].lastTrade %> 
+</p>
