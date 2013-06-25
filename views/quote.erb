@@ -1,0 +1,9 @@
+<h1>Input Stock Ticker:</h1>
+
+<form action="/stock_quote" method="get">
+  <input type = "text" name="ticker">
+  <button>Get Quote</button>
+</form>
+
+<h1>Stock Quote:</h1>
+<p>The <%= @ticker %> stock is worth $<%= @result %> per share.</p>
