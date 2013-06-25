@@ -5,8 +5,7 @@
   <button>Get price!</button>
 </form>
 
-<% def Stock.get_price(ticker) %>
-    <% @price = YahooFinance::get_quotes(YahooFinance::StandardQuote, ticker)[ticker].lastTrade %>
+<% if @ticker %>
+<p>Current price for <%= @ticker %> is <%= @price %> per share.</p>
 <% end %>
 
-<p>Current price for <%= @ticker %> is <%= @price %> per share.</p>
