@@ -3,6 +3,8 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'yahoofinance'
 
-get '/' do
+get '/get_price' do
+  @ticker = params[:ticker].to_s
   erb :quote
 end
+
