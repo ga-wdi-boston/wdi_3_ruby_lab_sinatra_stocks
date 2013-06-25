@@ -1,11 +1,12 @@
 <h1>Sinatra Stock Ticker</h1>
 
 
-<form action="/quotes" method= "get">
-  <input>
-
-
-
-
-
+<form action="/" method= "get">
+  <input type="text" name="ticker">
+  <button>Get Latest Price</button>
 </form>
+
+
+<% if @ticker %>
+<p>This stock has a recent total of <%=YahooFinance::get_quotes(YahooFinance::StandardQuote,@ticker)[@ticker].lastTrade %></p>
+<%end%>
