@@ -1,0 +1,8 @@
+<h1>Quote</h1>
+
+<form action="/quote" method="get">
+  <input type="text" name="ticker">
+  <button>Submit</button>
+</form>
+
+<p>One share of <%= @ticker %> is currently priced at <%= @quote %></p>
