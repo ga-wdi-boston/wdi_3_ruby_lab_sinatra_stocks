@@ -1,2 +1,11 @@
 <h1>Stock Ticker</h1>
-<p>The last trade price <%= @ticker %> was $<%= @result %></p>
+
+<form action="/quote" method="get">
+  <input type="text" name="ticker">
+  <button>Get Price</button>
+</form>
+
+<% if @ticker %>
+  <p>The last trade price of <%= @ticker %> was $<%= @result %>
+    </p>
+<% end %>
