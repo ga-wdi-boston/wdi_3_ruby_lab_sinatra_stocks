@@ -1,6 +1,8 @@
-<h1></h1>
+<h1>Enter a Stock Ticker</h1>
 
 <form action="/" method="get">
+  <input type="text" name="ticker">
+  <button>Get price!</button>
 </form>
 
-<p>Test test test</p>
+<p>The current stock price of <%= @ticker %> is <%= @result %>.</p>
