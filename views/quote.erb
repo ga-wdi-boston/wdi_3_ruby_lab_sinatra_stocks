@@ -1,0 +1,11 @@
+<form action="/" method="get">
+  <input type="text" name="ticker">
+  <button>Get it.</button>
+</form>
+
+<% if @price > 0 %>
+  <p><%= @ticker %> is currently trading at <%= @price %>.</p>
+  <p>Is something wrong, Patrick? You're sweating.</p>
+<% end %>
+
+
