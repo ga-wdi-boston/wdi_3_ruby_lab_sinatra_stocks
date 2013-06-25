@@ -3,9 +3,13 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'yahoofinance'
 
-get '/' do
-  @symbol = params[:symbol]
-  @result = YahooFinance::get_quotes(YahooFinance::StandardQuote, @symbol)[@symbol].lastTrade
+get '/quote' do
+  @ticker = params[:ticker]
+  if @ticker.nil?
+    @price = 0
+  else
+    @price = YahooFinance::get_quotes(YahooFinance::StandardQuote, @ticker)[@ticker].lastTrade
+  end
   erb :quote
 end
 
