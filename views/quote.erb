@@ -1,7 +1,13 @@
 <!doctype html>
 <html>
 <h1>The is the stock qoute.</h1>
-<body>
 
-</body>
+  <form action="/" method = "get">
+    <input type="text" name="ticker">
+    <button>Calculate</button>
+  </form>
+
+  <p><%= @ticker %></p>
+  <p><%= @price %></p>
+
 </html>

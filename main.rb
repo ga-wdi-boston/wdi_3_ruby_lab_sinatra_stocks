@@ -4,13 +4,14 @@ require 'sinatra/reloader' if development?
 require 'yahoofinance'
 
 get '/' do
-  erb :quote
-end
-
-get '/form' do
   @ticker = params[:ticker]
-  @price = params[:price]
-  erb :form
+  unless @ticker.nil?
+    @price = YahooFinance::get_quotes(YahooFinance::StandardQuote, @ticker.upcase)[@ticker.upcase].lastTrade
+  else
+    @price = 0
+  end
+
+  erb :quote
 end
 
 
