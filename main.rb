@@ -5,7 +5,7 @@ require 'yahoofinance'
 
 get '/' do
   @ticker = params[:ticker]
-  # YahooFinance::get_quotes(YahooFinance::StandardQuote, @ticker.upcase)[@ticker.upcase].lastTrade
+  @result = (YahooFinance::get_quotes(YahooFinance::StandardQuote, @ticker)[@ticker].lastTrade).to_s
   erb :quote
 end
 
