@@ -1,0 +1,14 @@
+<center><h1>What Stock are you looking for?</h1>
+
+  <form action="/quote" method="get">
+    <input type="text" name="ticker">
+    <button>CALCULATIONS!!!!</button>
+
+  </form>
+
+<% if @ticker %>
+<p>
+  the price of <%= @ticker %> is <%= @price %>
+</p>
+</center>
+  <% end %>
