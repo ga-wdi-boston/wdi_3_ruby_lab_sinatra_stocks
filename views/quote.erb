@@ -1,0 +1,10 @@
+<h1>Stock Quote</h1>
+<!-- this is a comment form -->
+<p>Enter ticker here:</p>
+<form action="/fetch_stock" method="get">
+  <input type="text" name="ticker">
+  <button>Fetch</button>
+</form>
+
+<p><%=@ticker%> is currently valued at <%=@market_value%></p>
+
