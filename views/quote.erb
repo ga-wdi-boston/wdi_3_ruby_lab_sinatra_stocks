@@ -1,0 +1,8 @@
+<h1>sinatra stock lab</h1>
+
+<form action="/quote" method="get">
+  <input type="text" name="ticker">
+  <button>get quote</button>
+</form>
+
+<p><%= @ticker %> is <%= @result %></p>
