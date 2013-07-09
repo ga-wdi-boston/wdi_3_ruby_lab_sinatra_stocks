@@ -3,6 +3,9 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'yahoofinance'
 
+get '/' do
+  redirect to('/fetch_stock')
+end
 get '/fetch_stock' do
   #name of the hash is always params[:___]
   @ticker = params[:ticker]
