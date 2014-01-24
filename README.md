@@ -1,39 +1,18 @@
 Sinatra Stock Lab
 =================
 
-#### How To Use Git For Your Lab Assignment
-[![How to fork this
-repo](https://github-images.s3.amazonaws.com/help/Bootcamp-Fork.png)](../../fork)
+## Stock Lab
 
-To get started, [fork this repo](../../fork) to the github account of ONE of your group
-memebers to create a new repository for your group (We'll call this person the
-*repository owner*).
+### Activity:
 
+Students should work individually on this assignment.
 
-The repository owner should then [add the other group members as
-github collaborators](https://help.github.com/articles/how-do-i-add-a-collaborator).
+* Create a webpage using Sinatra.
+* Use a layout file for templating
+* Use at least one H1 tag
+* Then print out the stock symbol and the current price and other relevant information
+* Use the yahoofinance gem.
+* 
+### Bonus
 
-Each person in the group should clone the repo to their local machine
-
-```
-# Get the URL from the repository owner's repo as usual. It will be of the form
-git clone git@github.com:<username>/<assignment>.git
-# Clones your fork of the repository into the current directory in terminal
-```
-
-```
-# pull, work, commit, and push to the repository as per the normal github
-# workflow
-git add .
-git commit -m "Description of change made"
-git push origin master
-```
-
-#### Submitting
-* To submit the lab, make your final commits, then have the repository
-"owner" issue a [Pull
-Request](https://help.github.com/articles/using-pull-requests) within github.
-This will send us your code. Include a reasonable comment describing what you're
-doing.
-
-
+* Add a form field for symbol with a submit button which makes a GET request for the stock
