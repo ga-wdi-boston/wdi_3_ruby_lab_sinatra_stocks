@@ -7,3 +7,8 @@
 		<dt>52 Week High</dt><dd><%= @data.high_52_weeks %></dd>
 	</dl>
 </div>
+
+<form action="/quote" method="GET">
+	<input type="text" name="ticker">
+	<input type="submit" value ="Search">
+</form>

@@ -7,7 +7,7 @@ get '/' do
   erb :quote
 end
 
-get '/quote/:ticker' do
+get '/quote/?:ticker?' do
 	@ticker = params[:ticker]
 	@data = YahooFinance.quotes([@ticker], [:volume, :last_trade_price, :high_52_weeks, :low_52_weeks]).first
 	erb :quote
