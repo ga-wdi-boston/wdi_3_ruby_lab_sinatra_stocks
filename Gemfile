@@ -2,4 +2,4 @@ source 'https://rubygems.org'
 
 gem 'sinatra'
 gem 'sinatra-reloader'
-gem 'yahoofinance'
+gem 'yahoo_finance'

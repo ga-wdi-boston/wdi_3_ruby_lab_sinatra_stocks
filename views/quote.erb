@@ -1,0 +1,9 @@
+<div>
+	<h1><%= @ticker %></h1>
+	<dl>
+		<dt>Price:</dt><dd><%= @data.last_trade_price %></dd>
+		<dt>Volume:</dt><dd><%= @data.volume %></dd>
+		<dt>52 Week Low</dt><dd><%= @data.low_52_weeks %></dd>
+		<dt>52 Week High</dt><dd><%= @data.high_52_weeks %></dd>
+	</dl>
+</div>
