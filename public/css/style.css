@@ -4,8 +4,8 @@ body {
   background: url('http://i.imgur.com/N4fkcZ6.jpg')
 }
 
-#result, #request {
-  width: 50%;
+#result {
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
   font-weight: bold;
@@ -16,7 +16,6 @@ body {
   color: white;
   box-shadow: 2px 2px 2px white;
 }
-
 span {
   color: red;
 }
@@ -31,4 +30,9 @@ input[type='submit'] {
 
 input {
   margin: 5px 0;
+}
+
+b {
+  text-decoration: underline;
+  font-size: 1.25em;
 }

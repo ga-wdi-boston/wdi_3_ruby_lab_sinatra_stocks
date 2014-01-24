@@ -5,23 +5,10 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-  <div id='request'>
-    <h1>Input Your Stock</h1>
-    <form method='GET' action='/'>
-      Stock Ticker:<br><input type='text' name='ticker'><br>
-      <h2>What do you want to see?</h2>
-      Average Daily Volume: <br><input type='checkbox' name='average_daily_volume'><br>
-      Bid:<br> <input type='checkbox' name='bid'><br>
-      Market Capitalization: <br><input type='checkbox' name='market_capitalization'><br>
-      Open: <br><input type='checkbox' name='open'><br>
-      Close: <br><input type='checkbox' name='close'><br>
-      Volume: <br><input type='checkbox' name='volume'><br>
-      Stock Exchange: <br><input type='checkbox' name='stock_exchange'><br>
-      <input type='submit'><br><br>
-    </form>
-  </div>
-  <div id='result'>
-    <%= yield %>
-  </div>
+  <section id='quotes'>
+    <div id='result'>
+      <%= yield %>
+    </div>
+  </section>
 </body>
 </html>
