@@ -32,7 +32,12 @@ input {
   margin: 5px 0;
 }
 
+.tweet {
+  padding: 5px;
+  margin: 10px;
+}
+
 b {
+  font-style: italic;
   text-decoration: underline;
-  font-size: 1.25em;
 }

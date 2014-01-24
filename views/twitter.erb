@@ -1,2 +1,10 @@
 <h1>Tweets</h1>
-<p><%= @result %></p>
+<div class='user-tweets'>
+  <h3> Tweets from <%= @user %></h3>
+  <% @tweets.each_with_index do |tweet, i| %>
+    <div class='tweet'>
+    <% break if i > 19%>
+      <b>Tweet <%= i+1 %></b>: <%= tweet.text %>
+    </div>
+    <% end %>
+</div>

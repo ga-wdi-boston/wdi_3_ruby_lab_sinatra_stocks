@@ -22,14 +22,16 @@ end
 
 get '/twitter/:user' do |user|
   twitter = twitter_client
-  tweets = twitter.user_timeline(user)
-  @result = ''
-  20.times { |x| @result << "<b>Tweet Number #{x+1}</b>:<br> <i>#{tweets[x].text}</i><br><br> " }
+  @user = user
+  @tweets = twitter.user_timeline(user)
+  # @result = ''
+  # 20.times { |x| @result << "<p class='tweet'><b>Tweet Number #{x+1}</b>:<br> <i>#{tweets[x].text}</i></p><br><br> " }
   erb :twitter
 end
 
 get '/' do
   code = '<h1>Welcome!</h1> <p>Choose /quotes or /twitter</p>'
+  erb code
 end
 
 get '/quotes' do
