@@ -1,1 +1,23 @@
-<%= yield %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Lab</title>
+</head>
+<body>
+  <h1>Input Your Stock</h1>
+  <form method='GET' action='/'>
+    Stock Ticker: <input type='text' name='ticker'><br>
+    Average Daily Volume: <input type='checkbox' name='average_daily_volume'><br>
+    Bid: <input type='checkbox' name='bid'><br>
+    Market Capitalization: <input type='checkbox' name='market_capitalization'><br>
+    Float Shares: <input type='checkbox' name='float_shares'><br>
+    Close: <input type='checkbox' name='close'><br>
+    Volume: <input type='checkbox' name='volume'><br>
+    Stock Exchange: <input type='checkbox' name='stock_exchange'><br>
+    <input type='submit'>
+  </form>
+  <div id='result'>
+    <%= yield %>
+  </div>
+</body>
+</html>
