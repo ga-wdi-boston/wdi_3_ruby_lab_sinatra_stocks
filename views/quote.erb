@@ -1,12 +1,11 @@
-Name:           <%= @name %> <br>
-Ticker:         <%= @sym %><br>
-Last Price:     $<%= @last %><br>
-Close Price:    $<%= @close %><br>
-Open Price:     $<%= @open %><br>
-Trade Volume:   <%= @volume %>
-Average Daily Volume: <%= @avg_daily_vol %><br>
-Bid: $<%= @bid %><br>
-Market Capitalization: $<%= @mark_cap %><br>
-Float Shares: <%= @float %><br>
-Exchange: <%= @exchange %><br>
+<p>Name:           <%= @name %> <br></p>
+<p>Ticker:         <%= @sym %><br></p>
+<p>Last Price:     $<%= @last %><br></p>
+<p><% if @close != 0 %>Close Price:    $<%= @close %><br> <% end %></p>
+<p><% if @open != 0 %>Open Price:     $<%= @open %><br><% end %></p>
+<p><% if @volume %>Trade Volume:   <%= @volume %><br><% end %></p>
+<p><% if @avg_daily_vol %>Average Daily Volume: <%= @avg_daily_vol %><br><% end %></p>
+<p><% if @bid %>Bid: $<%= @bid %><br><% end %></p>
+<p><% if @mark_cap %>Market Capitalization: $<%= @mark_cap %><br><% end %></p>
+<p><% if @exchange %>Exchange: <%= @exchange %><br><% end %></p>
 
