@@ -4,10 +4,38 @@ require 'sinatra/reloader' if development?
 require 'yahoo_finance'
 require 'twitter'
 require 'dotenv'
+require 'pg'
 
 
 Dotenv.load
 set :server, 'webrick'
+
+# Begin Helper Methods
+def run_sql(sql)
+# boiler plate
+  db = PG.connect(dbname: 'address_book', host: 'localhost')
+  result = db.exec(sql)
+  db.close
+  result
+end
+
+# DB app
+get '/people' do
+  @people = run_sql('SELECT * FROM people')
+  erb :people
+end
+
+post '/people' do
+  name, phone = params[:name], params[:phone]
+  run_sql("INSERT INTO people (name, phone) VALUES ('#{name.capitalize}', '#{phone}')")
+  redirect to '/people'
+end
+
+post '/people/delete' do
+  name = params[:name]
+  run_sql("DELETE FROM people WHERE name = '#{name.capitalize}'")
+  redirect to '/people'
+end
 
 def twitter_client
   client = Twitter::REST::Client.new do |config|
@@ -18,22 +46,17 @@ def twitter_client
   end
 end
 
-# In you application /twitter/:user_name
+# End Helper Methods
 
-get '/twitter/:user' do |user|
-  twitter = twitter_client
-  @user = user
-  @tweets = twitter.user_timeline(user)
-  # @result = ''
-  # 20.times { |x| @result << "<p class='tweet'><b>Tweet Number #{x+1}</b>:<br> <i>#{tweets[x].text}</i></p><br><br> " }
-  erb :twitter
-end
+
+# Root Directory aka Home Page
 
 get '/' do
   code = '<h1>Welcome!</h1> <p>Choose /quotes or /twitter</p>'
   erb code
 end
 
+# Quotes App Yahoo Finance
 get '/quotes' do
   ticker = params[:ticker]
   request = [:name, :last_trade_price]
@@ -59,3 +82,16 @@ get '/quotes' do
   end
   erb :quote
 end
+
+
+# Twitter app using Twitter gem
+get '/twitter/:user' do |user|
+  twitter = twitter_client
+  @user = user
+  @tweets = twitter.user_timeline(user)
+  # @result = ''
+  # 20.times { |x| @result << "<p class='tweet'><b>Tweet Number #{x+1}</b>:<br> <i>#{tweets[x].text}</i></p><br><br> " }
+  erb :twitter
+end
+
+
