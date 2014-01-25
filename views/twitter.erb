@@ -5,7 +5,16 @@
   <% @tweets.each_with_index do |tweet, i| %>
     <div class='tweet'>
     <% break if i > 19%>
-      <b>Tweet <%= i+1 %></b>: <%= tweet.text %>
+      <b>Tweet <%= i+1 %></b>:<br>
+        <% if (tweet.text =~ /http:*/) %>
+          <%= tweet.text.gsub(/\bhttp\w?:\/\/\w\.\w+\/\w+\b/, '') %>
+          <% web = tweet.text.scan(/\bhttp\w?:\/\/\w\.\w+\/\w+\b/)%>
+          <% web.each do |link| %>
+            <br><a href="<%=link%>" target="_blank"><%=link%></a>
+          <% end %>
+        <% else %>
+          <%= tweet.text %>
+        <% end %>
     </div>
     <% end %>
 </div>

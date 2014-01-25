@@ -1,7 +1,8 @@
 body {
   width: 900px;
   text-align: center;
-  background: url('http://i.imgur.com/N4fkcZ6.jpg')
+  background: url('http://i.imgur.com/N4fkcZ6.jpg');
+  font-family: 'Averia Sans Libre', cursive;
 }
 
 #result {
@@ -40,4 +41,14 @@ input {
 b {
   font-style: italic;
   text-decoration: underline;
+}
+
+a {
+  color: #FFF;
+  text-decoration: none;
+  transition: color .5s ease-in-out;
+}
+
+a:hover {
+  color: #000;
 }
