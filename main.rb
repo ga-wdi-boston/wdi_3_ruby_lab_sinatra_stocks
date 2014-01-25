@@ -85,12 +85,17 @@ end
 
 
 # Twitter app using Twitter gem
-get '/twitter/:user' do |user|
+get '/twitter/?:user?' do |user|
   twitter = twitter_client
-  @user = user
-  @tweets = twitter.user_timeline(user)
-  # @result = ''
-  # 20.times { |x| @result << "<p class='tweet'><b>Tweet Number #{x+1}</b>:<br> <i>#{tweets[x].text}</i></p><br><br> " }
+  if user
+    @user = user
+    begin
+      @tweets = twitter.user_timeline(user)
+    rescue Exception => e
+      @error = "There has been an error in your request: <br><span>#{e.message}</span>"
+    end
+  end
+  @msg = 'Please select a valid twitter username.'
   erb :twitter
 end
 

@@ -1,4 +1,5 @@
 <h1>Tweets</h1>
+<% if @tweets %>
 <div class='user-tweets'>
   <h3> Tweets from <%= @user %></h3>
   <% @tweets.each_with_index do |tweet, i| %>
@@ -8,3 +9,12 @@
     </div>
     <% end %>
 </div>
+<% else %>
+<div>
+  <% if @error %>
+    <p><%=@error%></p>
+  <% else %>
+    <p><%=@msg%></p>
+  <% end %>
+</div>
+<% end %>
