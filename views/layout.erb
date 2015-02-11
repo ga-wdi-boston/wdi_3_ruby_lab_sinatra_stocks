@@ -1,1 +1,44 @@
-<%= yield %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+	<div id="page">
+		<div class="row">
+			<div class="container">
+				<div class="jumbotron">
+				  <h1>Lets search some STOCKS</h1>
+				  <p class="lead">Fill out the form below and get some INFO</p>
+		  	</div>
+		  </div>
+		</div>
+		<div class="row">
+			<div class="container">
+				<div class="col-md-6">
+					<div class="boxy">
+						<div class="page-header">
+							<h1>Start here! <small>Enter a stock symbol</small></h1>
+						</div>
+						<form class="form-inline" role="form" action="/" method="GET">
+						  <div class="form-group">
+						    <input type="text" class="form-control" id="quote" placeholder="Enter stock symbol" name="quotes" autofocus>
+						  </div>
+						  <button type="submit" class="btn btn-orange">Search</button>
+						</form>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="boxy">
+						<%= yield %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</body>
+</html>
