@@ -1,0 +1,54 @@
+body {
+  width: 900px;
+  text-align: center;
+  background: url('http://i.imgur.com/N4fkcZ6.jpg');
+  font-family: 'Averia Sans Libre', cursive;
+}
+
+#result {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid;
+  margin-top: 30px;
+  background-color: rgba(255,200,150, .5);
+  color: white;
+  box-shadow: 2px 2px 2px white;
+}
+span {
+  color: #FF9900;
+}
+
+input[type='submit'] {
+  width: 40%;
+  font-size: 1.2em;
+  font-family: Helvitica;
+  background-color: #FFF;
+  padding: 0;
+}
+
+input {
+  margin: 5px 0;
+}
+
+.tweet {
+  padding: 5px;
+  margin: 10px;
+}
+
+b {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+a {
+  color: #FFF;
+  text-decoration: none;
+  transition: color .5s ease-in-out;
+}
+
+a:hover {
+  color: #000;
+}
