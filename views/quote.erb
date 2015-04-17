@@ -1,0 +1,8 @@
+<h1>Finding Real Time Stock Price for Ticker</h1>
+<form action="/get_price" method="get">
+  <input type="text" name="ticker">
+  <button>Find it!</button>
+</form>
+<% if @ticker %>
+  <p>The stock price for <%= @ticker %> is <%= @price %>.</p>
+<% end %>
