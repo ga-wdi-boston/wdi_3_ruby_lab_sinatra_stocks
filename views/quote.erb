@@ -1,0 +1,9 @@
+<h2>Please Enter Stock Quote:</h2>
+<form action="/stock_lab" method="get">
+  <input type="text" name="ticker">
+  <button> Price </button>
+</form>
+
+<% if @price != nil %>
+<p><%=@ticker %> is currently valued at  <%= @price %> per share!</p>
+<% end %>
