@@ -1,0 +1,6 @@
+<form action="/quote" method="get">
+  <input type="text" name="ticker">
+<button>Get price</button>
+</form>
+
+<p>The <%= @ticker %> stock is currently priced at $<%= @price %>.</p>
