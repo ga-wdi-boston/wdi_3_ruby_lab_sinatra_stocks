@@ -1,0 +1,12 @@
+<center><h1>Stock Prices</h1><center>
+
+<form action="/quote" method="get">
+  <input type="text" name="ticker">
+  <button>Calculate</button>
+</form>
+
+<% if @ticker %>
+  <p>
+    The current trading price of <%= @ticker %> is $<%= @price %>
+  </p>
+<% end %>
